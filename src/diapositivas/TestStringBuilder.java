@@ -19,6 +19,7 @@ public class TestStringBuilder {
 		aux=in.next();
 		if (aux.equalsIgnoreCase("quit"))
 			break;
+		if(Auxiliar.requisitos(aux))
 		//Añadimos al stringbuilder
 		sBuilder.append(aux+' ');
 	}
