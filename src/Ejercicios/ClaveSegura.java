@@ -1,57 +1,53 @@
 package Ejercicios;
 
 public class ClaveSegura {
-	public static boolean requisitos(String s){
-		return (minlongitudocho(s) && unaMayus(s) && unaMinus(s) && unDigito(s) && tieneSignos(s)) ;		
-		//Comprobar si tiene 1 mayuscula,minuscula,numeros y signos y minimo 8 letras
+	private String clave;
+	
+	public ClaveSegura(String clave) {
+		this.clave = clave;
 	}
-	private static boolean minlongitudocho(String s){
-		return s.length()>7;
+	
+	public  boolean minlongitudocho(){
+		return clave.length()>7;
 	}
-	private static boolean unaMayus(String s){
+	public  boolean unaMayus(){
 		boolean aux=false;
-		for (int i = 0; i < s.length(); i++) {
-			if (Character.isUpperCase(s.charAt(i))){
+		for (int i = 0; i < clave.length(); i++) {
+			if (Character.isUpperCase(clave.charAt(i))){
 				aux=true;
 				break;
 			}
 		}
 		return aux;
 	}
-	private static boolean unaMinus(String s){
+	public boolean unaMinus(){
 		boolean aux=false;
-		for (int i = 0; i < s.length(); i++) {
-			if (Character.isLowerCase(s.charAt(i))){
+		for (int i = 0; i < clave.length(); i++) {
+			if (Character.isLowerCase(clave.charAt(i))){
 				aux=true;
 				break;
 			}
 		}
 		return aux;
 	}
-	private static boolean unDigito(String s){
+	public boolean unDigito(){
 		boolean aux=false;
-		for (int i = 0; i < s.length(); i++) {
-			if (Character.isDigit(s.charAt(i))){
+		for (int i = 0; i < clave.length(); i++) {
+			if (Character.isDigit(clave.charAt(i))){
 				aux=true;
 				break;
 			}
 		}
 		return aux;
 	}	
-	private static boolean tieneSignos(String s){
+	public boolean tieneSignos(){
 		boolean aux=false;
-		for (int i = 0; i < s.length(); i++) {
-			if (!Character.isLetterOrDigit(s.charAt(i))){
+		for (int i = 0; i < clave.length(); i++) {
+			if (!Character.isLetterOrDigit(clave.charAt(i))){
 				aux=true;
 				break;
 			}
 		}
 		return aux;
-	}		
-	/*
-	 * Para pruebas
-	 * public static void main(String[] args) {
-		System.out.println(requisitos("HolaHolad%dddd1"));
-		
-	}*/
+	}
 }
